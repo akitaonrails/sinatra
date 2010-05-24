@@ -854,6 +854,7 @@ module Sinatra
       end
 
       def put(path, opts={}, &bk);    route 'PUT',    path, opts, &bk end
+      def patch(path, opts={}, &bk);  route 'PATCH',  path, opts, &bk end
       def post(path, opts={}, &bk);   route 'POST',   path, opts, &bk end
       def delete(path, opts={}, &bk); route 'DELETE', path, opts, &bk end
       def head(path, opts={}, &bk);   route 'HEAD',   path, opts, &bk end
@@ -1154,7 +1155,7 @@ module Sinatra
       end
     end
 
-    delegate :get, :put, :post, :delete, :head, :template, :layout,
+    delegate :get, :put, :patch, :post, :delete, :head, :template, :layout,
              :before, :after, :error, :not_found, :configure, :set, :mime_type,
              :enable, :disable, :use, :development?, :test?, :production?,
              :helpers, :settings
